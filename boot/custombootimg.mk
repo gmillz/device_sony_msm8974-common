@@ -1,5 +1,8 @@
 LOCAL_PATH := $(call my-dir)
 
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/combinedroot.fs:combinedroot.fs
+
 uncompressed_ramdisk := $(PRODUCT_OUT)/ramdisk.cpio
 $(uncompressed_ramdisk): $(INSTALLED_RAMDISK_TARGET)
 	zcat $< > $@
